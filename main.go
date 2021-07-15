@@ -56,6 +56,10 @@ func main(){
 		if errReq != nil {
 			log.Fatalln(errReq)
 		}
+		
+		if request == ""{
+			continue
+		}
 
 		log.Println(" " +request)
 	}
@@ -108,8 +112,7 @@ func getHttp(url string)(string , error){
 	
 	} else {
 
-		msg = "Status Code : "+strconv.Itoa(respond.StatusCode) + " => " + url
-		return msg , nil
+		return "" , nil
 	}
 
 }
